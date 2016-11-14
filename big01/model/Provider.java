@@ -1,5 +1,9 @@
 package com.javarush.test.level28.lesson15.big01.model;
 
+import com.javarush.test.level28.lesson15.big01.vo.Vacancy;
+
+import java.util.List;
+
 /**
  * Created by root on 11/13/2016.
  */
@@ -12,5 +16,9 @@ public class Provider{
 
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
+    }
+
+    public List<Vacancy> getJavaVacancies(String searchString){
+        return null;
     }
 }
