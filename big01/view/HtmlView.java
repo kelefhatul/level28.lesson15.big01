@@ -19,4 +19,8 @@ public class HtmlView implements View {
     public void setController(Controller controller) {
         this.controller = controller;
     }
+
+    public void userCitySelectEmulationMethod(){
+        controller.onCitySelect("Odessa");
+    }
 }
