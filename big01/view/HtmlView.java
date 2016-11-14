@@ -2,7 +2,6 @@ package com.javarush.test.level28.lesson15.big01.view;
 
 import com.javarush.test.level28.lesson15.big01.Controller;
 import com.javarush.test.level28.lesson15.big01.vo.Vacancy;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,8 +17,8 @@ import java.util.List;
  */
 public class HtmlView implements View {
     private final String filePath = "./src/"+this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
+//    private final String backUp = "./src/"+this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/backup1.html";
 
-    Template template = new Template();
 
     private Controller controller;
     @Override
@@ -33,7 +32,7 @@ public class HtmlView implements View {
     }
 
     public void userCitySelectEmulationMethod(){
-        controller.onCitySelect("Odessa");
+        controller.onCitySelect("Moskva");
     }
     private String getUpdatedFileContent(List<Vacancy> vacancies){
         String fileData = "";

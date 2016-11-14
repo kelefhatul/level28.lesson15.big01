@@ -19,6 +19,12 @@ public class Provider{
     }
 
     public List<Vacancy> getJavaVacancies(String searchString){
-        return strategy.getVacancies(searchString);
+        List<Vacancy> list = null;
+        try {
+            list = strategy.getVacancies(searchString);
+        } catch (NullPointerException e) {
+            /*e.printStackTrace();*/
+        }
+        return list;
     }
 }

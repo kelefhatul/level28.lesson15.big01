@@ -15,6 +15,10 @@ public class Controller {
         this.model = model;
     }
     public void onCitySelect(String cityName){
-        model.selectCity(cityName);
+        try {
+            model.selectCity(cityName);
+        } catch (NullPointerException e) {
+            /*NOP*/
+        }
     }
 }

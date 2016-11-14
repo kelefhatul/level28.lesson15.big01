@@ -24,7 +24,11 @@ public class Model {
         List<Vacancy> listByCity = new ArrayList<>();
         for (Provider curProvider : providers
              ) {
-            listByCity.addAll(curProvider.getJavaVacancies(city));
+            try {
+                listByCity.addAll(curProvider.getJavaVacancies(city));
+            } catch (NullPointerException e) {
+                /*e.printStackTrace();*/
+            }
         }
         view.update(listByCity);
     }
