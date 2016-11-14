@@ -19,8 +19,8 @@ public class HHStrategy implements Strategy {
     public List<Vacancy> getVacancies(String searchString) {
         String url = String.format(URL_FORMAT, "Kiev", 0);
         try {
-            Document doc = Jsoup.connect(url).userAgent("Mozilla/5.0 (jsoup)").timeout(5000).get();
-            System.out.println(doc.html());
+            Document doc = Jsoup.connect(url).userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36")
+                    .referrer("none").get();
         } catch (IOException e) {
             e.printStackTrace();
         }
