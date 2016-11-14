@@ -3,6 +3,9 @@ package com.javarush.test.level28.lesson15.big01.view;
 import com.javarush.test.level28.lesson15.big01.Controller;
 import com.javarush.test.level28.lesson15.big01.vo.Vacancy;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -10,7 +13,6 @@ import java.util.List;
  */
 public class HtmlView implements View {
     private final String filePath = "./src/"+this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
-
 
 
     private Controller controller;
@@ -30,7 +32,11 @@ public class HtmlView implements View {
     private String getUpdatedFileContent(List<Vacancy> vacancies){
         return "";
     }
-    private void updateFile(String name){
-
+    private void updateFile(String content){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))){
+            writer.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
