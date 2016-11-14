@@ -1,5 +1,6 @@
 package com.javarush.test.level28.lesson15.big01;
 
+import com.javarush.test.level28.lesson15.big01.model.HHStrategy;
 import com.javarush.test.level28.lesson15.big01.model.Provider;
 import com.javarush.test.level28.lesson15.big01.model.Strategy;
 
@@ -12,6 +13,7 @@ public class Aggregator {
         });
         Controller controller = new Controller(new Provider[]{provider});
         System.out.println(controller.toString());
+
 
     }
 }
